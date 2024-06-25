@@ -1,4 +1,9 @@
 
+using VehicleManagementSystem.API.Repositories.Interfaces;
+using VehicleManagementSystem.API.Repositories;
+using VehicleManagementSystem.API.Services.Interfaces;
+using VehicleManagementSystem.API.Services;
+
 namespace VehicleManagementSystem.API
 {
     public class Program
@@ -10,6 +15,11 @@ namespace VehicleManagementSystem.API
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            // Register services and repositories
+            builder.Services.AddScoped<IVehicleService, VehicleService>();
+            builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
