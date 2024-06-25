@@ -20,7 +20,7 @@ namespace VehicleManagementSystem.API.Controllers
         [Route("CheckOut")]
         public async Task<List<Vehicle>> CheckOutVehicles([FromBody] List<Guid> vehicleIds)
         {
-            return await _vehicleService.GetVehiclesByIdsAsync(vehicleIds);
+            return await _vehicleService.CheckOutVehiclesAsync(vehicleIds);
         }
     }
 }

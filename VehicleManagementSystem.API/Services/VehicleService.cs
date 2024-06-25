@@ -13,7 +13,7 @@ namespace VehicleManagementSystem.API.Services
             _vehicleRepository = vehicleRepository;
         }
 
-        public async Task<List<Vehicle>> GetVehiclesByIdsAsync(List<Guid> vehicleGuidList)
+        public async Task<List<Vehicle>> CheckOutVehiclesAsync(List<Guid> vehicleGuidList)
         {
             if (vehicleGuidList == null || !vehicleGuidList.Any())
                 throw new ArgumentException("Vehicle IDs cannot be null or empty.");
